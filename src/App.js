@@ -73,18 +73,11 @@ function App() {
 
   function handlePageChange(newPage){
    console.log('New page' ,newPage);
-   setFilters({
-     ... filters,
-     _page: newPage
-   })
+   setFilters({...filters, _page: newPage})
   }
 
   function handleFiltersChange(newFilters){
-     setFilters({
-       ... filters,
-       _page: 1,
-       title_like: newFilters.searchTerm
-     })
+     setFilters({...filters, _page: 1, title_like: newFilters.searchTerm})
   }
 
 const[showClock,setShowClock] = useState(true);
