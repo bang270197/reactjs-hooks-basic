@@ -10,6 +10,8 @@ import TodoForm from './components/TodoForm';
 import Todolist from './components/Todolist';
 import PostFiltersForm from './components/PostFilters';
 import Clock from './components/Clock';
+import BetterClock from './components/BetterClock';
+import MagicColor from './components/MagicColor';
 
 function App() {
   const [todoList,setTodo] = useState([
@@ -21,7 +23,6 @@ function App() {
   function handleTodoCLick(todo){
      console.log(todo);
      const index = todoList.findIndex(x => x.id === todo.id);
-     console.log(index);
      if(index <0) return;
      const newTodolist = [...todoList];
      newTodolist.splice(index,1);
@@ -85,8 +86,9 @@ const[showClock,setShowClock] = useState(true);
   return (
     <div className="app">
       <h1>Welcome to reactjs Hooks!</h1>
-     
+      <MagicColor/>
       {showClock &&<Clock />}
+      <BetterClock/>
       <button onClick={() => setShowClock()}>Hide clock</button>
  
       <PostList posts={postList}/>
@@ -101,6 +103,8 @@ const[showClock,setShowClock] = useState(true);
         onPageChange={handlePageChange}
       />
       <ColorBox/>
+
+      
     </div>
   );
 }
